@@ -11,6 +11,8 @@ export class PackageManagerFactory {
         return new NpmPackageManager();
       case PackageManager.YARN:
         return new YarnPackageManager();
+      default:
+        throw new Error(`Package manager ${ name } is not managed.`);
     }
   }
 
